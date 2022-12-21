@@ -1,4 +1,5 @@
-<?php include "Header.php"; ?>
+<?php include "Header.php"
+?>
 <section class="content">
     <div class="container-fluid">
         <div class="row">
@@ -11,7 +12,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <?= form_open('registration_action'); ?>
+              <?= form_open('Registration_Action'); ?>
                 <div class="card-body">
                   <div class="form-group row">
                     <label for="inputname" class="col-sm-2 col-form-label">Name</label>
@@ -21,7 +22,9 @@
                       <?php
                       $name =array(
                       'type' => "text",
+                      'name'  => 'name',
                       'class' =>"form-control",
+                      'value'=>   set_value('name'),
                       'id'=> "inputname",
                       'placeholder' => "Your Name",
                       'required' =>'required'
@@ -29,6 +32,7 @@
 
                       echo form_input($name);
                       ?>
+                       <?php echo form_error('name'); ?>
                     </div>
                   </div>
                   <div class="form-group row">
@@ -37,13 +41,17 @@
                       <?php
                       $phone = array(
                         'type' => 'number',
+                        'name'  => 'phone',
                         'class' =>"form-control" ,
+                        'value'=>   set_value('phone'),
                         'id' => "inputnumber",
                         'placeholder' => "Enter Number",
                         'required' =>'required' 
                        );
                        echo form_input($phone);
                       ?>
+                      <?php echo form_error('phone'); ?>
+                      
                     </div>
                   </div>
 
@@ -55,13 +63,16 @@
                       <?php
                        $email = array(
                         'type' => 'email',
+                        'name'  => 'email',
                         'class' => 'form-control' ,
+                        'value'=>   set_value('email'),
                         'id' => 'inputemail' ,
                         'placeholder' => 'Your email' ,
                         'Required' => 'Required'
                       );
                       echo form_input($email);
                       ?>
+                      <?php echo form_error('email'); ?>
                     </div>
                   </div>
 
@@ -71,6 +82,7 @@
                       <?php
                       $Password = array(
                         'type' => 'password',
+                        'name'  => 'password',
                         'class' => 'form-control', 
                         'id' => 'inputPassword3', 
                         'placeholder' => 'Password' , 
@@ -78,6 +90,7 @@
                       );
                       echo form_input($Password);
                         ?>
+                        <?php echo form_error('password'); ?>
                     </div>
                     
                     <label for="inputPassword3" class="col-sm-3 col-form-label"> Confirm Password</label>    
@@ -86,6 +99,7 @@
                       <?php
                       $CPassword = array(
                         'type' => 'password',
+                        'name'  => 'cpassword',
                         'class' => 'form-control', 
                         'id' => 'inputPassword3', 
                         'placeholder' => 'Confirm Password' , 
@@ -93,6 +107,7 @@
                       );
                       echo form_input($CPassword);
                         ?>
+                        <?php echo form_error('password'); ?>
                     </div>
                   </div>
 
@@ -103,6 +118,7 @@
                     <?php
                     $Address = array(
                       'type' => 'textarea' ,
+                      'name'  => 'address',
                       'class' => 'form-control',
                       'rows' => '5',
                       'id' =>'address' ,
@@ -110,7 +126,8 @@
                       'Required' =>'Required' 
                    );
                     echo form_textarea($Address)
-                    ?>  
+                    ?>
+                    <?php echo form_error('Address'); ?>  
                       
                     </div>
                   </div>
